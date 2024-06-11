@@ -1,0 +1,58 @@
+@import "../../styles//variables";
+
+.about {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+  h1 {
+    font-family: $secondary_font;
+    text-transform: uppercase;
+  }
+
+  img {
+    border-radius: 1.5rem;
+  }
+
+  &__description {
+    display: flex;
+    margin-top: 1rem;
+    color: $silver;
+
+    button {
+      padding: 0.8rem 0;
+      width: 50%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-family: $secondary_font;
+      margin-right: 10rem;
+      border-radius: 0.5rem;
+      background-color: $lime;
+      text-transform: uppercase;
+    }
+  }
+
+  &__introduction {
+    display: flex;
+    margin-top: 2rem;
+
+    &__images {
+      width: 50%;
+    }
+
+    &__text {
+      width: 50%;
+      display: flex;
+
+      div p {
+        color: $silver;
+        margin-top: 0.5rem;
+      }
+
+      &__highlight {
+        color: pink;
+      }
+    }
+  }
+}

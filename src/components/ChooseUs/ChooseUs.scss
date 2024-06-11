@@ -1,0 +1,75 @@
+@import "../../styles//variables";
+
+.choose__us {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 10px;
+  margin: 3rem auto;
+  padding: 1rem;
+
+  h1 {
+    text-transform: uppercase;
+    font-family: $secondary_font;
+  }
+
+  &__slider {
+    margin-top: 1rem;
+    padding: 1rem;
+    // margin: 1rem;
+    width: 100%;
+
+    .slide__item__container {
+      &__item {
+        background-color: $dark;
+        padding: 2rem;
+        margin: 1rem;
+        border-radius: 1rem;
+
+        img {
+          width: 80px;
+        }
+
+        h3 {
+          font-family: $secondary_font;
+        }
+
+        p {
+          margin-top: 1rem;
+        }
+
+        &__btn {
+          display: flex;
+          margin-top: 1rem;
+
+          button {
+            background-color: transparent;
+            color: $white;
+            font-family: $secondary_font;
+            font-weight: 600;
+          }
+
+          .fiarrow {
+            justify-content: center;
+            display: flex;
+            margin-left: 0.5rem;
+          }
+        }
+        &:hover {
+          background-color: $lime;
+          color: $dark;
+          transition: 0.3s ease-in-out;
+          button {
+            color: $black;
+            transition: 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slick-dots li button:before {
+  font-size: 1.5rem !important;
+  color: $white !important;
+}
