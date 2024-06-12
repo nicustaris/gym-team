@@ -10,6 +10,7 @@
   h1 {
     font-family: $secondary_font;
     text-transform: uppercase;
+    margin-bottom: 1rem;
   }
 
   &__header {
@@ -114,7 +115,7 @@
       }
 
       &__highlight {
-        color: #ecabab;
+        color: #ee8b8b;
       }
     }
   }

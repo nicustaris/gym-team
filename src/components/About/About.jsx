@@ -32,24 +32,24 @@ const About = () => {
         </div>
         <div className="about__introduction__text">
           <div>
-            <h3>
+            <h2>
               <span className="about__introduction__text__highlight">
                 Lorem ipsum
               </span>{" "}
               dolor sit amet
-            </h3>
+            </h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio
               amet neque nulla totam, praesentium voluptatum.
             </p>
           </div>
           <div>
-            <h3>
+            <h2>
               <span className="about__introduction__text__highlight">
                 Lorem ipsum
               </span>{" "}
               dolor sit amet
-            </h3>
+            </h2>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio
               amet neque nulla totam, praesentium voluptatum.

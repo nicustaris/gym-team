@@ -1,0 +1,43 @@
+@import "../../styles//variables";
+
+.coaches {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1c1c1c;
+
+  .container {
+    margin: 5rem 0;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-family: $secondary_font;
+    margin-bottom: 1rem;
+  }
+
+  &__introduction {
+    color: $silver;
+  }
+
+  &__slider {
+    margin-top: 2rem;
+    &__slide {
+      img {
+        width: 18rem;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+      &__name {
+        margin-top: 1rem;
+      }
+      &__title {
+        color: $semi_dark;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
