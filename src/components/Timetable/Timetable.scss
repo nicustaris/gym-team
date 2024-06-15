@@ -1,0 +1,26 @@
+@import "../../styles//variables";
+
+.timetable {
+  display: flex;
+  margin: 5rem auto;
+  justify-content: center;
+  color: $silver;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 1rem;
+
+    td {
+      border: 1px solid $semi_dark;
+      padding: 1rem;
+    }
+    td:first-child {
+      border-left: none;
+    }
+
+    td:last-child {
+      border-right: none;
+    }
+  }
+}
