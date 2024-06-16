@@ -9,8 +9,8 @@ function App() {
     <>
       <Hero />
       <ChooseUs />
-      <About />
-      <Coaches />
+      {/* <About /> */}
+      {/* <Coaches /> */}
       <Timetable />
     </>
   );

@@ -24,26 +24,30 @@ const Timetable = () => {
 
   return (
     <div className="timetable wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            {days.map((day) => (
-              <th>{day}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {times.map((time, timeIndex) => (
+      <div className="timetable__container">
+        <table>
+          <thead>
             <tr>
-              <td>{time}</td>
+              <th></th>
               {days.map((day) => (
-                <td>{schedule[day][timeIndex]}</td>
+                <th>{day}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {times.map((time, timeIndex) => (
+              <tr>
+                <td>{time}</td>
+                {days.map((day) => (
+                  <td>{schedule[day][timeIndex]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <button className="timetable__button">View More</button>
     </div>
   );
 };

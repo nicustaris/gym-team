@@ -1,26 +1,77 @@
 @import "../../styles//variables";
+@import "../../styles/mixins";
 
 .timetable {
   display: flex;
+  width: 100%;
+  flex-direction: column;
   margin: 5rem auto;
-  justify-content: center;
   color: $silver;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: auto;
 
-  table {
+  &__container {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 1rem;
+    overflow-x: auto;
 
-    td {
-      border: 1px solid $semi_dark;
-      padding: 1rem;
-    }
-    td:first-child {
-      border-left: none;
+    // Scrollbar design preference's
+    &::-webkit-scrollbar {
+      height: 0.5rem;
     }
 
-    td:last-child {
-      border-right: none;
+    &::-webkit-scrollbar-thumb {
+      background: $semi_dark;
+      border-radius: 1rem;
     }
+
+    &::-webkit-scrollbar-track {
+      background: $dark;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1000px;
+      border-collapse: collapse;
+      border-spacing: 1rem;
+
+      overflow-x: auto;
+      overflow-y: auto;
+
+      th,
+      td {
+        border: 1px solid $dark;
+        padding: 1rem;
+        text-align: center;
+        border-top: none;
+      }
+
+      th:first-child,
+      td:first-child {
+        border-left: none;
+      }
+
+      th:last-child,
+      td:last-child {
+        border-right: none;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    background-color: $lime;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 0.5rem 2rem;
+    font-family: $secondary_font;
+    margin-top: 2rem;
   }
 }
