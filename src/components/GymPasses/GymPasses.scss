@@ -1,0 +1,31 @@
+@import "../../styles//variables";
+@import "../../styles/mixins";
+
+.gympasses {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  justify-content: center;
+
+  &__heading {
+    font-family: $secondary_font;
+    text-transform: uppercase;
+    @include respond(md) {
+      text-align: center;
+    }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    &__monthly {
+      color: $silver;
+    }
+    &__early {
+      color: $semi_dark;
+    }
+  }
+}
