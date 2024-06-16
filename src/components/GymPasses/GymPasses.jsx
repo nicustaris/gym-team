@@ -4,6 +4,9 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { GiConfirmed } from "react-icons/gi";
+
 import "./GymPasses.scss";
 
 const GymPasses = () => {
@@ -15,20 +18,20 @@ const GymPasses = () => {
 
   const settings = {
     dots: true,
-    arrows: false,
+    arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Display 3 items at a time
+    slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // Medium devices (tablets, small laptops)
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 600, // Small devices (phones)
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
         },
@@ -36,11 +39,12 @@ const GymPasses = () => {
     ],
   };
 
-  const prices = [
+  const subscription = [
     {
       type: "Monthly",
       name: "Crossfit",
-      price: 120,
+      monthlyPrice: 120,
+      annualPrice: 1400,
       features: [
         "Lorem ipsum dolor sit amet consectetur.",
         "Lorem ipsum dolor sit amet consectetur.",
@@ -51,7 +55,8 @@ const GymPasses = () => {
     {
       type: "Monthly",
       name: "Open Gym",
-      price: 120,
+      monthlyPrice: 109,
+      annualPrice: 1300,
       features: [
         "Lorem ipsum dolor sit amet consectetur.",
         "Lorem ipsum dolor sit amet consectetur.",
@@ -68,28 +73,32 @@ const GymPasses = () => {
           <span className="gympasses__options__monthly">Monthly </span>
           <span className="gympasses__options__early">/ Early</span>
         </label>
-        <input type="checkbox" />
+        <input type="checkbox" className="gympasses__options__checkbox" />
       </div>
-
-      <div className="gympasses__slider"></div>
-    </div>
-  );
-};
-
-const NextArrow = (props) => {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      Next
-    </div>
-  );
-};
-
-const PrevArrow = (props) => {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-      Prev
+      <div className="gympasses__slider">
+        <Slider {...settings}>
+          {subscription.map((data) => (
+            <div className="gympasses__slider__details">
+              <h3>{data?.name}</h3>
+              <h1>
+                £{data?.monthlyPrice}
+                <span>/MO</span>
+              </h1>
+              <ul>
+                {data?.features.map((feature) => (
+                  <li>
+                    <GiConfirmed style={{ marginRight: "0.5rem" }} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="gympasses__slider__details__button">
+                Purchase Now
+              </button>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };
