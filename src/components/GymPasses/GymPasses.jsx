@@ -69,10 +69,10 @@ const GymPasses = () => {
     <div className="gympasses wrapper">
       <h1 className="gympasses__heading">Our Gym Passes</h1>
       <div className="gympasses__options">
-        <label>
-          <span className="gympasses__options__monthly">Monthly </span>
-          <span className="gympasses__options__early">/ Early</span>
-        </label>
+        <div className="gympasses__options__info">
+          <span className="gympasses__options__info__monthly">Monthly </span>
+          <span className="gympasses__options__info__early">/ Early</span>
+        </div>
         <input type="checkbox" className="gympasses__options__checkbox" />
       </div>
       <div className="gympasses__slider">

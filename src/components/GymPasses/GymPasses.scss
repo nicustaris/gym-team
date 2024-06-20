@@ -23,13 +23,16 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     margin: 2rem auto;
 
-    &__monthly {
-      color: $silver;
-    }
-    &__early {
-      color: $semi_dark;
+    &__info {
+      &__monthly {
+        color: $silver;
+      }
+      &__early {
+        color: $semi_dark;
+      }
     }
 
     &__checkbox {
