@@ -71,7 +71,7 @@ const GymPasses = () => {
       <div className="gympasses__options">
         <label>
           <span className="gympasses__options__monthly">Monthly </span>
-          <span className="gympasses__options__early">/ Early!</span>
+          <span className="gympasses__options__early">/ Early</span>
         </label>
         <input type="checkbox" className="gympasses__options__checkbox" />
         <p>test</p>
