@@ -74,6 +74,7 @@ const GymPasses = () => {
           <span className="gympasses__options__early">/ Early!</span>
         </label>
         <input type="checkbox" className="gympasses__options__checkbox" />
+        <p>test</p>
       </div>
       <div className="gympasses__slider">
         <Slider {...settings}>
