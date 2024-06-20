@@ -71,13 +71,13 @@ const GymPasses = () => {
       <div className="gympasses__options">
         <label>
           <span className="gympasses__options__monthly">Monthly </span>
-          <span className="gympasses__options__early">/ Early</span>
+          <span className="gympasses__options__early">/ Early!</span>
         </label>
         <input type="checkbox" className="gympasses__options__checkbox" />
       </div>
       <div className="gympasses__slider">
         <Slider {...settings}>
-          {subscription.map((data) => (
+          {subscription.map((data, index) => (
             <div className="gympasses__slider__details">
               <h3>{data?.name}</h3>
               <h1>
@@ -98,6 +98,7 @@ const GymPasses = () => {
             </div>
           ))}
         </Slider>
+        <div className="gympasses__slider__divider"></div>
       </div>
     </div>
   );
