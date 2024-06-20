@@ -33,7 +33,8 @@
     }
 
     &__checkbox {
-      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
     }
   }
 
