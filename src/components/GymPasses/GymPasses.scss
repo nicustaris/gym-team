@@ -35,9 +35,56 @@
       }
     }
 
-    &__checkbox {
-      display: flex;
-      justify-content: center;
+    &__switch {
+      position: relative;
+      display: inline-block;
+      margin-top: 0.5rem;
+      width: 3.5rem;
+      height: 1.8rem;
+
+      &__checkbox {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f2c94c;
+        border: 1px solid #000;
+        border-radius: 3rem;
+        transition: 0.4s;
+
+        &::before {
+          position: absolute;
+          content: "";
+          height: 1.45rem;
+          width: 1.45rem;
+          border-radius: 1.5rem;
+          left: 0.15rem;
+          bottom: 0.09rem;
+          background-color: #000;
+          transition: 0.4s;
+        }
+      }
+
+      &__checkbox:checked + &__slider {
+        background-color: $lime;
+        border: 1px solid #000;
+      }
+
+      &__checkbox:focus + &__slider {
+        box-shadow: 0 0 1px $lime;
+      }
+
+      &__checkbox:checked + &__slider:before {
+        transform: translateX(1.5rem);
+      }
     }
   }
 

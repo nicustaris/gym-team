@@ -73,7 +73,13 @@ const GymPasses = () => {
           <span className="gympasses__options__info__monthly">Monthly </span>
           <span className="gympasses__options__info__early">/ Early</span>
         </div>
-        <input type="checkbox" className="gympasses__options__checkbox" />
+        <label className="gympasses__options__switch">
+          <input
+            type="checkbox"
+            className="gympasses__options__switch__checkbox"
+          />
+          <span className="gympasses__options__switch__slider"></span>
+        </label>
       </div>
       <div className="gympasses__slider">
         <Slider {...settings}>
