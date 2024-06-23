@@ -12,7 +12,7 @@ function App() {
       <Hero />
       <ChooseUs />
       {/* <About /> */}
-      {/* <Coaches /> */}
+      <Coaches />
       <Timetable />
       <HighlightImage />
       <GymPasses />

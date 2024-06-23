@@ -1,45 +1,66 @@
 @import "../../styles//variables";
+@import "../../styles/mixins";
 
 .coaches {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: #1c1c1c;
+  width: 100%;
+  padding: 1rem;
 
-  .container {
-    margin: 5rem 0;
-  }
+  &__container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 3rem 0;
 
-  &__heading {
-    text-transform: uppercase;
-    font-family: $secondary_font;
-    margin-bottom: 1rem;
-  }
+    &__heading {
+      text-transform: uppercase;
+      font-family: $secondary_font;
+      margin-bottom: 1rem;
+    }
 
-  &__introduction {
-    color: $silver;
-  }
+    &__introduction {
+      color: $silver;
+    }
 
-  &__slider {
-    margin-top: 2rem;
-    &__slide {
-      img {
-        width: 18rem;
-        height: 20rem;
-        object-fit: cover;
-        border-radius: 1rem;
-      }
-      &__name {
-        margin-top: 1rem;
-      }
-      &__title {
-        color: $semi_dark;
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
+    &__slider {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      &__slide {
+        padding: 0 0.5rem;
+
+        img {
+          width: 100%;
+          height: 25rem;
+          object-fit: cover;
+          border-radius: 1rem;
+
+          @include respond(sm) {
+            width: 100%;
+            height: 25rem;
+            object-fit: cover;
+          }
+        }
+
+        &__name {
+          margin-top: 1rem;
+        }
+
+        &__title {
+          color: $semi_dark;
+          font-size: 0.8rem;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
+}
+
+.slick-slider {
+  margin: 0 -0.5rem;
 }
 
 .slick-dots li button:before {

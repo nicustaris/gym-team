@@ -21,13 +21,19 @@ const Coaches = () => {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, // Medium devices (tablets, small laptops)
+        breakpoint: 1240, // Medium devices (tablets, small laptops)
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 840, // Medium devices (tablets, small laptops)
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 600, // Small devices (phones)
+        breakpoint: 577, // Small devices (phones)
         settings: {
           slidesToShow: 1,
         },
@@ -59,28 +65,32 @@ const Coaches = () => {
   ];
 
   return (
-    <div className="coaches">
-      <div className="container wrapper">
-        <h1 className="coaches__heading">Our Best Coaches</h1>
-        <p className="coaches__introduction">
+    <section className="coaches">
+      <div className="coaches__container wrapper">
+        <h1 className="coaches__container__heading">Our Best Coaches</h1>
+        <p className="coaches__container__introduction">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo
           aspernatur in quod illo iure nobis dolores tempore voluptas molestiae
           ducimus deserunt error, labore explicabo tempora nesciunt possimus
           quam nihil consequatur adipisci? Consequatur quas reiciendis incidunt?
         </p>
-        <div className="coaches__slider">
+        <div className="coaches__container__slider">
           <Slider {...settings}>
             {coashList.map((coach) => (
-              <div className="coaches__slider__slide">
+              <div className="coaches__container__slider__slide">
                 <img src={coach.image} alt="" />
-                <h3 className="coaches__slider__slide__name">{coach.name}</h3>
-                <p className="coaches__slider__slide__title">{coach.title}</p>
+                <h3 className="coaches__container__slider__slide__name">
+                  {coach.name}
+                </h3>
+                <p className="coaches__container__slider__slide__title">
+                  {coach.title}
+                </p>
               </div>
             ))}
           </Slider>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
