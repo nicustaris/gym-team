@@ -1,30 +1,47 @@
 @import "../../styles//variables";
+@import "../../styles/mixins";
 
 .about {
   display: flex;
+  position: relative;
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
   margin-bottom: 5rem;
-
-  h1 {
-    font-family: $secondary_font;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
+  padding: 1rem;
 
   &__header {
-    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 20rem;
+      border-radius: 0.5rem;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-family: $secondary_font;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
   }
 
   &__description {
     display: flex;
+    position: relative;
+    align-items: flex-start;
     margin-top: 2rem;
     color: $silver;
 
     button {
+      width: 10rem;
+      position: absolute;
+      top: -7rem;
+      left: 1rem;
       padding: 0.8rem 0;
-      width: 50%;
       font-size: 1.5rem;
       font-weight: 600;
       font-family: $secondary_font;
@@ -37,19 +54,28 @@
 
   &__introduction {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     margin-top: 3rem;
 
+    @include respond(md) {
+      flex-direction: row;
+    }
+
     &__images {
       display: flex;
-      width: 50%;
+      width: 100%;
       gap: 3rem;
+
+      @include respond(md) {
+        gap: 1rem;
+      }
 
       &__container {
         position: relative;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         overflow: hidden;
 
@@ -106,8 +132,15 @@
     }
 
     &__text {
-      width: 50%;
       display: flex;
+      width: 100%;
+      flex-direction: column;
+      margin-top: 2rem;
+
+      @include respond(md) {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
 
       div p {
         color: $silver;

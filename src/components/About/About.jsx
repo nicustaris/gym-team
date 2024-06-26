@@ -9,8 +9,10 @@ import "./About.scss";
 const About = () => {
   return (
     <div className="about wrapper">
-      <h1>About Our Gym</h1>
-      <img src={Header} alt="" className="about__header" />
+      <div className="about__header">
+        <h1>About Our Gym</h1>
+        <img src={Header} alt="/" />
+      </div>
       <div className="about__description">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt fugit

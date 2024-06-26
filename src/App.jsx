@@ -11,7 +11,7 @@ function App() {
     <>
       <Hero />
       <ChooseUs />
-      {/* <About /> */}
+      <About />
       <Coaches />
       <Timetable />
       <HighlightImage />
