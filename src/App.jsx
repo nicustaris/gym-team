@@ -4,6 +4,7 @@ import Coaches from "./components/Coaches/Coaches";
 import GymPasses from "./components/GymPasses/GymPasses";
 import Hero from "./components/Hero/Hero";
 import HighlightImage from "./components/HighlightImage/HighlightImage";
+import Reviews from "./components/Reviews/Reviews";
 import Timetable from "./components/Timetable/Timetable";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Timetable />
       <HighlightImage />
       <GymPasses />
+      <Reviews />
     </>
   );
 }
