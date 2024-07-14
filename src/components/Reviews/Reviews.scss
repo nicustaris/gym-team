@@ -37,11 +37,6 @@
       margin: 0;
       padding: 1rem;
 
-      .slick-prev,
-      .slick-next {
-        display: none !important;
-      }
-
       @include respond(md) {
         width: 60%;
       }
@@ -108,6 +103,12 @@
             font-size: 1.5rem;
             height: 50px;
             align-items: center;
+
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
           }
         }
       }

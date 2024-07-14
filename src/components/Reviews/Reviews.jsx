@@ -57,6 +57,7 @@ const Reviews = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
   };
