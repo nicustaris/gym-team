@@ -28,11 +28,15 @@ const Reviews = () => {
   ];
 
   const goToPrev = () => {
-    sliderRef.current.slickPrev();
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
   };
 
   const goToNext = () => {
-    sliderRef.current.slickNext();
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
   };
 
   const CustomPrevArrow = () => (
