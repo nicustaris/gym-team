@@ -12,10 +12,6 @@ import Slider from "react-slick";
 const Reviews = () => {
   const sliderRef = useRef(null);
 
-  const tester = useRef(null);
-
-  console.log(tester);
-
   const clientReviews = [
     {
       review:
