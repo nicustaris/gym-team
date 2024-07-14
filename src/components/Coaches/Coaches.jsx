@@ -76,8 +76,8 @@ const Coaches = () => {
         </p>
         <div className="coaches__container__slider">
           <Slider {...settings}>
-            {coashList.map((coach) => (
-              <div className="coaches__container__slider__slide">
+            {coashList.map((coach, index) => (
+              <div key={index} className="coaches__container__slider__slide">
                 <img src={coach.image} alt="" />
                 <h3 className="coaches__container__slider__slide__name">
                   {coach.name}

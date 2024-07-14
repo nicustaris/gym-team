@@ -84,15 +84,15 @@ const GymPasses = () => {
       <div className="gympasses__slider">
         <Slider {...settings}>
           {subscription.map((data, index) => (
-            <div className="gympasses__slider__details">
+            <div key={index} className="gympasses__slider__details">
               <h3>{data?.name}</h3>
               <h1>
                 £{data?.monthlyPrice}
                 <span>/MO</span>
               </h1>
               <ul>
-                {data?.features.map((feature) => (
-                  <li>
+                {data?.features.map((feature, index) => (
+                  <li key={index}>
                     <GiConfirmed style={{ marginRight: "0.5rem" }} />
                     {feature}
                   </li>

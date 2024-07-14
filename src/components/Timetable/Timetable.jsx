@@ -29,17 +29,17 @@ const Timetable = () => {
           <thead>
             <tr>
               <th></th>
-              {days.map((day) => (
-                <th>{day}</th>
+              {days.map((day, index) => (
+                <th key={index}>{day}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {times.map((time, timeIndex) => (
-              <tr>
+              <tr key={timeIndex}>
                 <td>{time}</td>
-                {days.map((day) => (
-                  <td>{schedule[day][timeIndex]}</td>
+                {days.map((day, dayIndex) => (
+                  <td key={dayIndex}>{schedule[day][timeIndex]}</td>
                 ))}
               </tr>
             ))}
