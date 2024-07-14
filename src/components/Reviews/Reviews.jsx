@@ -12,6 +12,10 @@ import Slider from "react-slick";
 const Reviews = () => {
   const sliderRef = useRef(null);
 
+  const tester = useRef(null);
+
+  console.log(tester);
+
   const clientReviews = [
     {
       review:
@@ -26,8 +30,6 @@ const Reviews = () => {
       authorTitle: "Profi coach",
     },
   ];
-
-  console.log(sliderRef);
 
   const goToPrev = () => {
     sliderRef.current.slickPrev();
@@ -64,37 +66,34 @@ const Reviews = () => {
       <h1>Reviews From Clients</h1>
       <div className="reviews__container">
         <Slider ref={sliderRef} {...settings}>
-          {clientReviews.map(({ review, author, authorTitle }, index) => {
-            console.log(index);
-            return (
-              <div key={index} className="reviews__container__slider">
-                <div className="reviews__container__slider__header">
-                  <div className="reviews__container__slider__header__quote">
-                    <IoMdQuote />
-                  </div>
-                  <div className="reviews__container__slider__header__page">
-                    {index + 1}/{clientReviews.length}
-                  </div>
+          {clientReviews.map(({ review, author, authorTitle }, index) => (
+            <div key={index} className="reviews__container__slider">
+              <div className="reviews__container__slider__header">
+                <div className="reviews__container__slider__header__quote">
+                  <IoMdQuote />
                 </div>
-                <div className="reviews__container__slider__review">
-                  <h3>{review}</h3>
-                </div>
-                <div className="reviews__container__slider__author">
-                  <div className="reviews__container__slider__author__profile">
-                    <img src={profile} alt="/" />
-                    <div className="reviews__container__slider__author__profile__details">
-                      <h4>{author}</h4>
-                      <p>{authorTitle}</p>
-                    </div>
-                  </div>
-                  <div className="reviews__container__slider__author__profile__arrows">
-                    <CustomPrevArrow />
-                    <CustomNextArrow />
-                  </div>
+                <div className="reviews__container__slider__header__page">
+                  {index + 1}/{clientReviews.length}
                 </div>
               </div>
-            );
-          })}
+              <div className="reviews__container__slider__review">
+                <h3>{review}</h3>
+              </div>
+              <div className="reviews__container__slider__author">
+                <div className="reviews__container__slider__author__profile">
+                  <img src={profile} alt="/" />
+                  <div className="reviews__container__slider__author__profile__details">
+                    <h4>{author}</h4>
+                    <p>{authorTitle}</p>
+                  </div>
+                </div>
+                <div className="reviews__container__slider__author__profile__arrows">
+                  <CustomPrevArrow />
+                  <CustomNextArrow />
+                </div>
+              </div>
+            </div>
+          ))}
         </Slider>
       </div>
     </div>
