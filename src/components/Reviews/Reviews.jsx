@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./Reviews.scss";
 import profile from "./profile.avif";
@@ -10,14 +10,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import Slider from "react-slick";
 
 const Reviews = () => {
-  const settings = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  const sliderRef = useRef(null);
 
   const clientReviews = [
     {
@@ -33,11 +26,44 @@ const Reviews = () => {
       authorTitle: "Profi coach",
     },
   ];
+
+  console.log(sliderRef);
+
+  const goToPrev = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const goToNext = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const CustomPrevArrow = () => (
+    <div className="custom-prev-arrow" onClick={goToPrev}>
+      <IoIosArrowDropleftCircle />
+    </div>
+  );
+
+  const CustomNextArrow = () => (
+    <div className="custom-next-arrow" onClick={goToNext}>
+      <IoIosArrowDroprightCircle />
+    </div>
+  );
+  const settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+  };
+
   return (
     <div className="reviews wrapper">
       <h1>Reviews From Clients</h1>
       <div className="reviews__container">
-        <Slider {...settings}>
+        <Slider ref={sliderRef} {...settings}>
           {clientReviews.map(({ review, author, authorTitle }, index) => {
             console.log(index);
             return (
@@ -47,7 +73,7 @@ const Reviews = () => {
                     <IoMdQuote />
                   </div>
                   <div className="reviews__container__slider__header__page">
-                    1/4
+                    {index + 1}/{clientReviews.length}
                   </div>
                 </div>
                 <div className="reviews__container__slider__review">
@@ -62,8 +88,8 @@ const Reviews = () => {
                     </div>
                   </div>
                   <div className="reviews__container__slider__author__profile__arrows">
-                    <IoIosArrowDropleftCircle />
-                    <IoIosArrowDroprightCircle />
+                    <CustomPrevArrow />
+                    <CustomNextArrow />
                   </div>
                 </div>
               </div>
