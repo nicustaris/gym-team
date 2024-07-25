@@ -1,4 +1,5 @@
 import About from "./components/About/About";
+import Blog from "./components/Blog/Blog";
 import ChooseUs from "./components/ChooseUs/ChooseUs";
 import Coaches from "./components/Coaches/Coaches";
 import GymPasses from "./components/GymPasses/GymPasses";
@@ -18,6 +19,7 @@ function App() {
       <HighlightImage />
       <GymPasses />
       <Reviews />
+      <Blog />
     </>
   );
 }

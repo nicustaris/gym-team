@@ -58,8 +58,8 @@ const Reviews = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
+    // prevArrow: <CustomPrevArrow />,
+    // nextArrow: <CustomNextArrow />,
   };
 
   return (
