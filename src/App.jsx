@@ -1,5 +1,5 @@
 import About from "./components/About/About";
-import Blog from "./components/Blog/Blog";
+import Blogs from "./components/Blogs/Blogs";
 import ChooseUs from "./components/ChooseUs/ChooseUs";
 import Coaches from "./components/Coaches/Coaches";
 import GymPasses from "./components/GymPasses/GymPasses";
@@ -19,7 +19,7 @@ function App() {
       <HighlightImage />
       <GymPasses />
       <Reviews />
-      <Blog />
+      <Blogs />
     </>
   );
 }

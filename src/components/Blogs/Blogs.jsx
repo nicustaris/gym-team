@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./Blog.scss";
+import "./Blogs.scss";
 
 import Slider from "react-slick";
 
-const Blog = () => {
+const Blogs = () => {
   const blogs = [
     {
       area: "",
@@ -24,4 +24,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogs;
