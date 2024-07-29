@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   background-color: $grey;
+  padding-bottom: 3rem;
 
   .blog {
     display: flex;
@@ -89,5 +90,9 @@
         }
       }
     }
+  }
+  .slick-dots {
+    position: absolute;
+    bottom: -2rem;
   }
 }
