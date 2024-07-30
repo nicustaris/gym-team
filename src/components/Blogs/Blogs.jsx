@@ -4,6 +4,8 @@ import "./Blogs.scss";
 
 import Slider from "react-slick";
 import { FiArrowUpRight } from "react-icons/fi";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 // Slider images
 import background from "./bg.jpg";
@@ -38,8 +40,8 @@ const Blogs = () => {
     speed: 500,
     slidesToShow: 3, // Display 3 items at a time
     slidesToScroll: 1,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1200, // Large screen (laptop and above)
@@ -98,5 +100,17 @@ const Blogs = () => {
     </div>
   );
 };
+
+const NextArrow = (props) => (
+  <div className="next-arrow">
+    <MdKeyboardArrowRight size={20} />
+  </div>
+);
+
+const PrevArrow = (props) => (
+  <div className="prev-arrow">
+    <MdKeyboardArrowLeft size={25} />
+  </div>
+);
 
 export default Blogs;

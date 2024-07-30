@@ -24,4 +24,10 @@
       @content;
     }
   }
+
+  @if $breakpoint == xxl {
+    @media screen and (min-width: 1340px) {
+      @content;
+    }
+  }
 }
