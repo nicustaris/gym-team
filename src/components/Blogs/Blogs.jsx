@@ -74,8 +74,8 @@ const Blogs = () => {
         </p>
         <div className="sliders__container">
           <Slider {...settings}>
-            {blogsList.map((blog) => (
-              <div className="blog__slider">
+            {blogsList.map((blog, idx) => (
+              <div key={idx} className="blog__slider">
                 <div className="blog__slider__image">
                   <img
                     src={blog.image}
@@ -101,14 +101,13 @@ const Blogs = () => {
   );
 };
 
-const NextArrow = (props) => (
-  <div className="next-arrow">
+const NextArrow = ({ onClick }) => (
+  <div className="next-arrow" onClick={onClick}>
     <MdKeyboardArrowRight size={20} />
   </div>
 );
-
-const PrevArrow = (props) => (
-  <div className="prev-arrow">
+const PrevArrow = ({ onClick }) => (
+  <div className="prev-arrow" onClick={onClick}>
     <MdKeyboardArrowLeft size={25} />
   </div>
 );

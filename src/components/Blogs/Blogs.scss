@@ -25,18 +25,28 @@
 
     &__text {
       color: $silver;
-      margin: 0.5rem 0 1rem;
+      margin: 0.5rem auto 1rem;
+
+      @include respond(md) {
+        width: 60%;
+        text-align: center;
+      }
     }
 
     .sliders__container {
       display: flex;
       width: 100%;
       flex-direction: column;
+      gap: 1rem;
+
+      .slick-slide {
+        padding: 0 0.5rem;
+      }
 
       .blog__slider {
         display: flex;
         width: 100%;
-        padding-right: 1rem;
+        // padding-right: 1rem;
 
         &__image {
           position: relative;
@@ -105,6 +115,7 @@
   display: none !important;
 }
 
+// Media queries
 @include respond(xxl) {
   .prev-arrow {
     width: 100%;
@@ -114,11 +125,11 @@
     display: flex !important;
     position: absolute;
     align-items: center;
-    top: 50%;
+    top: 30%;
+    left: 0;
     margin-left: -3.5rem;
     width: 35px;
     height: 35px;
-    transform: translate(99%, -50%);
     cursor: pointer;
     border: 2px solid $silver;
     border-radius: 50%;
@@ -130,21 +141,25 @@
   }
 
   .next-arrow {
-    font-size: 1;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
     line-height: 0;
+    display: flex !important;
     position: absolute;
-    top: 50%;
+    align-items: center;
+    top: 30%;
     right: 0;
-    display: block;
-    margin-right: -2rem;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+    margin-right: -3.5rem;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    border: none;
+    border: 2px solid $silver;
+    border-radius: 50%;
     outline: none;
+
+    svg {
+      color: $silver;
+    }
   }
 }
