@@ -7,6 +7,7 @@ import Hero from "./components/Hero/Hero";
 import HighlightImage from "./components/HighlightImage/HighlightImage";
 import Reviews from "./components/Reviews/Reviews";
 import Timetable from "./components/Timetable/Timetable";
+import TrialVisit from "./components/TrialVisit/TrialVisit";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <GymPasses />
       <Reviews />
       <Blogs />
+      <TrialVisit />
     </>
   );
 }
