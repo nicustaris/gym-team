@@ -2,6 +2,7 @@ import About from "./components/About/About";
 import Blogs from "./components/Blogs/Blogs";
 import ChooseUs from "./components/ChooseUs/ChooseUs";
 import Coaches from "./components/Coaches/Coaches";
+import Footer from "./components/Footer/Footer";
 import GymPasses from "./components/GymPasses/GymPasses";
 import Hero from "./components/Hero/Hero";
 import HighlightImage from "./components/HighlightImage/HighlightImage";
@@ -22,6 +23,7 @@ function App() {
       <Reviews />
       <Blogs />
       <TrialVisit />
+      <Footer />
     </>
   );
 }
