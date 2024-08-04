@@ -10,8 +10,7 @@ const TrialVisit = () => {
       <h1 className="trial__container__heading">Get Your First Trial Visit</h1>
       <p className="trial__container__paragraph">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
-        voluptatibus placeat error ut debitis qui, similique quisquam cumque
-        maiores dolorem? Error, soluta ratione.
+        voluptatibus placeat error ut debitis qui, similique quisquam cumque.
       </p>
       <div className="trial__container__submit">
         <input type="text" placeholder="sample@example.com" />
