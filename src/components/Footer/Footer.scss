@@ -1,2 +1,15 @@
 @import "../../styles//variables";
 @import "../../styles/mixins";
+
+.footer {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 1rem;
+
+  &__logo {
+  }
+
+  &__links {
+  }
+}
