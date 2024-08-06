@@ -13,7 +13,7 @@ const TrialVisit = () => {
         voluptatibus placeat error ut debitis qui, similique quisquam cumque.
       </p>
       <div className="trial__container__submit">
-        <input type="text" placeholder="sample@example.com" />
+        <input type="text" placeholder="sample@email.com" />
         <button>Submit</button>
       </div>
     </div>
