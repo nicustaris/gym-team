@@ -2,19 +2,30 @@ import React from "react";
 
 import "./Footer.scss";
 
+// Social media icons
+import { FaFacebookF } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer className="footer wrapper">
       <div className="footer__logo">
         <h2>GymTeam</h2>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta eos
-          molestiae praesentium?
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, vitae
+          aliquam!
         </p>
         <div className="footer__logo__icons">
-          <span>FB</span>
-          <span>TLG</span>
-          <span>INST</span>
+          <span>
+            <FaFacebookF />
+          </span>
+          <span>
+            <FaTelegramPlane />
+          </span>
+          <span>
+            <FaInstagram />
+          </span>
         </div>
       </div>
       <div className="footer__links">
