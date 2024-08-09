@@ -1,0 +1,56 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+
+  &__container {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    &__heading {
+      font-size: 7rem;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      font-family: $secondary_font;
+    }
+
+    &__redirect {
+      margin-top: 1rem;
+      display: flex;
+      width: 100%;
+      height: auto;
+
+      button {
+        background-color: inherit;
+        color: $white;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        font-family: $secondary_font;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
