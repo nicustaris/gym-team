@@ -3,6 +3,7 @@
 
 .shop {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   height: 100vh;
@@ -10,21 +11,24 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  overflow: hidden;
 
-  &__container {
+  @include respond(md) {
+    height: 350px;
+  }
+
+  &__header {
     width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 1rem;
     box-sizing: border-box;
+    margin: 0 auto;
 
     &__heading {
-      font-size: 7rem;
-      line-height: 1;
+      font-size: 5rem;
+      line-height: 0.9;
       margin: 0;
       padding: 0;
       text-transform: uppercase;
@@ -53,4 +57,165 @@
       }
     }
   }
+}
+
+.shop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.shop * {
+  z-index: 2;
+}
+
+.shop__page {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 3rem !important;
+
+  @include respond(md) {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  &__sidebar {
+    width: 100%;
+
+    input {
+      width: 100%;
+      background: transparent;
+      padding: 0.35rem;
+      border: 1px solid $silver;
+      border-radius: 0.2rem;
+      color: $silver;
+
+      &::placeholder {
+        color: $silver;
+      }
+    }
+
+    &__filter {
+      margin-top: 1rem;
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-top: 0.5rem;
+        color: $silver;
+      }
+    }
+
+    &__categories {
+      h3 {
+        margin-top: 1rem;
+      }
+
+      ul {
+        list-style: none;
+        color: $silver;
+
+        li {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 0.5rem;
+
+          span {
+            font-size: 0.9rem;
+            color: $semi_dark;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &__img {
+        width: 100%;
+        background-color: $dark;
+        border-radius: 1rem;
+      }
+
+      &__category {
+        font-size: 0.9rem;
+        color: $semi_dark;
+        margin-top: 0.5rem;
+      }
+
+      &__name {
+        text-transform: uppercase;
+        font-family: $secondary_font;
+      }
+
+      &__price {
+        .old-price {
+          margin-right: 1rem;
+          text-decoration: line-through;
+          color: $silver;
+        }
+        .price {
+          color: $lime;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.multi-range-slider {
+  all: unset;
+  width: 100%;
+  height: auto;
+}
+
+.multi-range-slider .bar-inner {
+  background-color: $lime;
+  height: 6px;
+  border: none;
+  box-shadow: none;
+}
+
+.multi-range-slider .bar-left,
+.multi-range-slider .bar-right {
+  box-shadow: none;
+  background-color: $silver;
+  padding: 2px;
+}
+
+.multi-range-slider .thumb::before {
+  width: 12px;
+  height: 12px;
+  margin: -3px -4px;
+  box-shadow: none;
+  border: none;
+  background-color: $lime;
+}
+
+.multi-range-slider__track,
+.multi-range-slider__thumb,
+.multi-range-slider .ruler,
+.multi-range-slider .labels {
+  display: none;
 }
