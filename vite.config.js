@@ -8,5 +8,5 @@ const baseURL = import.meta.env.VITE_BASE_URL || "/";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  base: "/gym-team/",
 });
