@@ -6,13 +6,12 @@ import Shop from "./pages/Shop/Shop";
 
 function App() {
   return (
-    <div>Hello World!</div>
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/shop" element={<Shop />} />
-    //   </Routes>
-    // </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/shop" element={<Shop />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
