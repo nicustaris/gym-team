@@ -6,12 +6,25 @@ import Shop from "./pages/Shop/Shop";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/shop" element={<Shop />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Hero />
+      <ChooseUs />
+      <About />
+      <Coaches />
+      <Timetable />
+      <HighlightImage />
+      <GymPasses />
+      <Reviews />
+      <Blogs />
+      <TrialVisit />
+      <Footer />
+    </>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/shop" element={<Shop />} />
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
