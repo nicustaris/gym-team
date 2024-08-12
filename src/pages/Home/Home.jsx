@@ -13,7 +13,7 @@ import TrialVisit from "../../components/TrialVisit/TrialVisit";
 const Home = () => {
   return (
     <>
-      <Hero />
+      {/* <Hero />
       <ChooseUs />
       <About />
       <Coaches />
@@ -22,7 +22,7 @@ const Home = () => {
       <GymPasses />
       <Reviews />
       <Blogs />
-      <TrialVisit />
+      <TrialVisit /> */}
       <Footer />
     </>
   );
