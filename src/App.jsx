@@ -3,8 +3,7 @@ import router from "./routes/AppRoutes";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  // return <RouterProvider router={router} />;
-  return <Footer />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
