@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Access environment variable using import.meta.env
-const baseURL = process.env.VITE_BASE_URL || "/";
+console.log("VITE_BASE_URL:", process.env.VITE_BASE_URL);
+console.log("import.meta.env.VITE_BASE_URL:", import.meta.env.VITE_BASE_URL);
 
-console.log("Base URL in Vite Config:", baseURL);
+const baseURL = import.meta.env.VITE_BASE_URL || "/";
 
 export default defineConfig({
   plugins: [react()],
-  base: baseURL,
+  base: "/",
 });
