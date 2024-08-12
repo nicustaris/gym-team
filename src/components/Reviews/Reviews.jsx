@@ -52,7 +52,6 @@ const Reviews = () => {
   );
   const settings = {
     dots: true,
-    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
