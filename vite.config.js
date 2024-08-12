@@ -5,5 +5,5 @@ const baseURL = process.env.VITE_BASE_URL || "/";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/gym-team/",
+  base: baseURL,
 });
