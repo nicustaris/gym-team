@@ -4,11 +4,11 @@ import Shop from "../pages/Shop/Shop";
 
 const router = createBrowserRouter([
   {
-    path: "/gym-team",
+    path: "/",
     element: <Home />,
   },
   {
-    path: "/gym-team/shop",
+    path: "/shop",
     element: <Shop />,
   },
 ]);
