@@ -4,7 +4,7 @@ import Shop from "../pages/Shop/Shop";
 
 const routes = [
   {
-    path: "/test",
+    path: "/",
     element: <Home />,
   },
   {
