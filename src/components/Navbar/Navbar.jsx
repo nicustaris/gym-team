@@ -12,12 +12,8 @@ const Navbar = () => {
       <h2>GYMTEAM</h2>
       <nav>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/shop">Shop</Link>
-          </li>
+          <li>Home</li>
+          <li>Shop</li>
           <li>Blog</li>
           <li>Contact</li>
         </ul>
