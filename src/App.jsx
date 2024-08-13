@@ -7,13 +7,7 @@ import router from "./routes/AppRoutes";
 import Hero from "./components/Hero/Hero";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes basename={import.meta.env.DEV ? "/" : "/gym-team/"}>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 
   // <BrowserRouter>
   //   <Routes>
