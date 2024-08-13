@@ -4,15 +4,17 @@ import Home from "./pages/Home/Home";
 import Shop from "./pages/Shop/Shop";
 
 import router from "./routes/AppRoutes";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
-    </BrowserRouter>
+    <Hero />
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/shop" element={<Shop />} />
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 
