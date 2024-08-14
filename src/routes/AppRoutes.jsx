@@ -19,8 +19,6 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes, {
-  basename: import.meta.env.DEV ? "/" : "/gym-team/",
-});
+const router = createBrowserRouter(routes);
 
 export default router;

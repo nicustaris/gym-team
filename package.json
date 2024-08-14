@@ -2,7 +2,6 @@
   "name": "gym-team",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://nicustaris.github.io/gym-team/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
