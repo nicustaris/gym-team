@@ -18,6 +18,8 @@ const Shop = () => {
     setMaxPrice(e.maxValue);
   };
 
+  const products = new Array(6).fill("");
+
   return (
     <>
       <div className="shop">
@@ -73,44 +75,29 @@ const Shop = () => {
           </div>
         </div>
         <div className="shop__page__content">
-          <div className="shop__page__content__card">
-            <img
-              src={product}
-              alt=""
-              className="shop__page__content__card__img"
-            />
-            <span className="shop__page__content__card__category">Gainers</span>
-            <h3 className="shop__page__content__card__name">Mega Mass</h3>
-            <div className="shop__page__content__card__price">
-              <span className="old-price">£130</span>
-              <span className="price">£120</span>
+          {products.map(() => (
+            <div className="shop__page__content__card">
+              <img
+                src={product}
+                alt=""
+                className="shop__page__content__card__img"
+              />
+              <span className="shop__page__content__card__category">
+                Gainers
+              </span>
+              <h3 className="shop__page__content__card__name">Mega Mass</h3>
+              <div className="shop__page__content__card__price">
+                <span className="old-price">£130</span>
+                <span className="price">£120</span>
+              </div>
             </div>
-          </div>
-          <div className="shop__page__content__card">
-            <img
-              src={product}
-              alt=""
-              className="shop__page__content__card__img"
-            />
-            <span className="shop__page__content__card__category">Gainers</span>
-            <h3 className="shop__page__content__card__name">Mega Mass</h3>
-            <div className="shop__page__content__card__price">
-              <span>£130</span>
-              <span>£120</span>
-            </div>
-          </div>
-          <div className="shop__page__content__card">
-            <img
-              src={product}
-              alt=""
-              className="shop__page__content__card__img"
-            />
-            <span className="shop__page__content__card__category">Gainers</span>
-            <h3 className="shop__page__content__card__name">Mega Mass</h3>
-            <div className="shop__page__content__card__price">
-              <span>£130</span>
-              <span>£120</span>
-            </div>
+          ))}
+          <div className="shop__page__content__pagination">
+            <button>{"<"}</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>{">"}</button>
           </div>
         </div>
       </div>

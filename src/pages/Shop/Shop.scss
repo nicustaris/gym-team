@@ -146,6 +146,15 @@
     display: grid;
     grid-template-columns: 1fr;
 
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @include respond(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     &__card {
       display: flex;
       flex-direction: column;
