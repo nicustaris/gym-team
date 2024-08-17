@@ -1,20 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MultiRangeSlider from "multi-range-slider-react";
 
 import Navbar from "../../components/Navbar/Navbar";
+import Pagination from "../../components/Pagination/Pagination";
+import Footer from "../../components/Footer/Footer";
 
 import { FiArrowUpRight } from "react-icons/fi";
 
 import product from "./product.png";
-
 import "./Shop.scss";
-import Pagination from "./Pagination";
-import Footer from "../../components/Footer/Footer";
 
 const Shop = () => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(500);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
     setMinPrice(e.minValue);
@@ -32,6 +34,10 @@ const Shop = () => {
     indexOfLastProduct
   );
 
+  const handleBackHome = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <div className="shop">
@@ -39,7 +45,10 @@ const Shop = () => {
         <div className="shop__header wrapper">
           <h1 className="shop__header__heading">Our Shop</h1>
           <div className="shop__header__redirect">
-            <button>Back Home</button>
+            <button onClick={handleBackHome}>
+              {/* <Link to="/">Back Home</Link> */}
+              Back Home
+            </button>
             <span>
               <FiArrowUpRight size={20} />
             </span>
