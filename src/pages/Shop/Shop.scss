@@ -143,52 +143,86 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 
-    @include respond(sm) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
+    &__products {
+      display: grid;
+      grid-template-columns: 1fr;
 
-    @include respond(lg) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+      @include respond(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
 
-    &__card {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin-bottom: 1rem;
+      @include respond(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-      &__img {
+      &__card {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        background-color: $dark;
-        border-radius: 1rem;
-      }
+        margin-bottom: 1rem;
 
-      &__category {
-        font-size: 0.9rem;
-        color: $semi_dark;
-        margin-top: 0.5rem;
-      }
-
-      &__name {
-        text-transform: uppercase;
-        font-family: $secondary_font;
-      }
-
-      &__price {
-        .old-price {
-          margin-right: 1rem;
-          text-decoration: line-through;
-          color: $silver;
+        &__img {
+          width: 100%;
+          background-color: $dark;
+          border-radius: 1rem;
         }
-        .price {
-          color: $lime;
-          font-weight: 600;
+
+        &__category {
+          font-size: 0.9rem;
+          color: $semi_dark;
+          margin-top: 0.5rem;
+        }
+
+        &__name {
+          text-transform: uppercase;
+          font-family: $secondary_font;
+        }
+
+        &__price {
+          .old-price {
+            margin-right: 1rem;
+            text-decoration: line-through;
+            color: $silver;
+          }
+          .price {
+            color: $lime;
+            font-weight: 600;
+          }
         }
       }
+    }
+
+    &__pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          button {
+            padding: 0.3rem;
+            border: none;
+            background-color: inherit;
+            color: $white;
+            font-size: 0.9rem;
+          }
+          button.active {
+            color: $silver;
+          }
+        }
+      }
+    }
+
+    svg {
+      color: $semi_dark;
     }
   }
 }
