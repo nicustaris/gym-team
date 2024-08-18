@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 
 import { CiSearch } from "react-icons/ci";
@@ -7,6 +7,14 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {}, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="navbar wrapper">
       <h2>GYMTEAM</h2>
@@ -51,8 +59,18 @@ const Navbar = () => {
           <CiSearch size={21} />
         </div>
         <CiMail size={21} />
-        <RxHamburgerMenu size={21} />
+        <RxHamburgerMenu
+          size={21}
+          onClick={toggleMenu}
+          className="navbar__icons__container__hamburger"
+        />
       </div>
+
+      {isMenuOpen && (
+        <div className="navbar__overlay">
+          <span>hey</span>
+        </div>
+      )}
     </div>
   );
 };

@@ -34,22 +34,24 @@ const Pagination = ({
   return (
     <>
       <div className="shop__page__content__pagination">
-        <MdKeyboardArrowLeft size={20} onClick={prevPage} />
         {pages.length > 1 && (
-          <ul>
-            {pages.map((page) => (
-              <li key={page}>
-                <button
-                  className={`${page === currentPage ? `active` : ""}`}
-                  onClick={() => setCurrentPage(page)}
-                >
-                  {page}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <>
+            <MdKeyboardArrowLeft size={20} onClick={prevPage} />
+            <ul>
+              {pages.map((page) => (
+                <li key={page}>
+                  <button
+                    className={`${page === currentPage ? `active` : ""}`}
+                    onClick={() => setCurrentPage(page)}
+                  >
+                    {page}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <MdKeyboardArrowRight size={20} onClick={nextPage} />
+          </>
         )}
-        <MdKeyboardArrowRight size={20} onClick={nextPage} />
       </div>
     </>
   );

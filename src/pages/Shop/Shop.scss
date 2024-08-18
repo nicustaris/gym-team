@@ -20,6 +20,7 @@
     width: 100%;
     flex: 1;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
@@ -48,6 +49,7 @@
         border: none;
         outline: none;
         font-family: $secondary_font;
+        cursor: pointer;
       }
 
       span {
@@ -67,11 +69,6 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.shop * {
-  z-index: 2;
 }
 
 .shop__page {
@@ -195,6 +192,10 @@
           }
         }
       }
+
+      &__notfound {
+        color: $silver;
+      }
     }
 
     &__pagination {
@@ -213,11 +214,11 @@
             padding: 0.3rem;
             border: none;
             background-color: inherit;
-            color: $white;
+            color: $silver;
             font-size: 0.9rem;
           }
           button.active {
-            color: $silver;
+            color: $white;
           }
         }
       }
