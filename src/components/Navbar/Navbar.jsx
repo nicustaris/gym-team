@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { CiSearch } from "react-icons/ci";
@@ -10,11 +10,10 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {}, [isMenuOpen]);
+  const [rotateClass, setRotateClass] = useState("");
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
@@ -72,14 +71,44 @@ const Navbar = () => {
             <MdClose
               size={21}
               onClick={toggleMenu}
-              className="navbar__icons__container__hamburgerMenuClose"
+              className={`navbar__icons__container__hamburgerMenuClose ${
+                isMenuOpen ? "rotate" : ""
+              }`}
             />
           )}
         </div>
 
         {isMenuOpen && (
           <div className="navbar__overlay">
-            <span>hey</span>
+            <div className="navbar__overlay__content">
+              <h5 className="navbar__overlay__title">NAVIGATE</h5>
+              <ul className="navbar__overlay__menu">
+                <li>
+                  <NavLink to="/" onClick={toggleMenu}>
+                    <span className="navbar__overlay__menu__number">01</span>
+                    <span className="navbar__overlay__menu__text">Home</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/shop" onClick={toggleMenu}>
+                    <span className="navbar__overlay__menu__number">02</span>
+                    <span className="navbar__overlay__menu__text">Shop</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/blog" onClick={toggleMenu}>
+                    <span className="navbar__overlay__menu__number">03</span>
+                    <span className="navbar__overlay__menu__text">Blog</span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/contact" onClick={toggleMenu}>
+                    <span className="navbar__overlay__menu__number">04</span>
+                    <span className="navbar__overlay__menu__text">Contact</span>
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
           </div>
         )}
       </div>
