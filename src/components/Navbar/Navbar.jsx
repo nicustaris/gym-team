@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import { CiSearch } from "react-icons/ci";
@@ -11,13 +11,35 @@ import "./Navbar.scss";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [rotateClass, setRotateClass] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    console.log("test");
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
+
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
+
+  const handleScroll = () => {
+    console.log("test");
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
   };
 
   return (
-    <div className="navbar-wrapper">
+    <div className={`navbar-wrapper ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar wrapper">
         <h2>GYMTEAM</h2>
         <nav>
