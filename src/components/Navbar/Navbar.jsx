@@ -15,8 +15,6 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    console.log("test");
   }, []);
 
   const toggleMenu = () => {
@@ -30,7 +28,6 @@ const Navbar = () => {
   };
 
   const handleScroll = () => {
-    console.log("test");
     if (window.scrollY > 50) {
       setIsScrolled(true);
     } else {
@@ -62,7 +59,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/blog"
+                to="/blogs"
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Blog
