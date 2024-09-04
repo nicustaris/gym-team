@@ -115,7 +115,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/blog" onClick={toggleMenu}>
+                  <NavLink to="/blogs" onClick={toggleMenu}>
                     <span className="navbar__overlay__menu__number">03</span>
                     <span className="navbar__overlay__menu__text">Blog</span>
                   </NavLink>

@@ -3,11 +3,13 @@ import React from "react";
 import "./Blogs.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import { FiArrowUpRight } from "react-icons/fi";
 
 import blogsImg from "./blogs_img.jpg";
 
 const Blog = () => {
   const topposts = new Array(5).fill();
+  const blogsList = new Array(5).fill();
   return (
     <>
       <div className="blogs">
@@ -68,28 +70,37 @@ const Blog = () => {
             </div>
             <div className="blogs__posts">
               <div className="blogs__posts__container">
-                <div className="blogs__posts__item">
-                  <div className="blogs__posts__image">
-                    <img src={blogsImg} />
-                  </div>
-                  <div className="blogs__posts__content">
-                    <h1>Testing the Elements</h1>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Eligendi sed delectus quasi consequuntur dignissimos rerum
-                      sit quibusdam consequatur perferendis recusandae, sequi
-                      adipisci, porro perspiciatis quia voluptatum ut omnis iste
-                      excepturi vel tempora beatae. Accusamus quasi autem sunt
-                      rerum quas aliquam animi exercitationem! Magni soluta
-                      fuga, corporis omnis consequuntur voluptates atque!
-                    </p>
-                    <div className="blogs__posts__content__meta">
-                      <span>August 31, 2024</span>
-                      <span>4 comments</span>
-                      <span>Sub Category</span>
+                {blogsList.map((blog) => (
+                  <div className="blogs__posts__item">
+                    <div className="blogs__posts__image">
+                      <img src={blogsImg} />
+                    </div>
+                    <div className="blogs__posts__content">
+                      <h1>Testing the Elements</h1>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Eligendi sed delectus quasi consequuntur dignissimos
+                        rerum sit quibusdam consequatur perferendis recusandae,
+                        sequi adipisci, porro perspiciatis quia voluptatum ut
+                        omnis iste excepturi vel tempora beatae. Accusamus quasi
+                        autem sunt rerum quas aliquam animi exercitationem!
+                        Magni soluta fuga, corporis omnis consequuntur
+                        voluptates atque!
+                      </p>
+                      <div className="blogs__posts__content__meta">
+                        <span>August 31, 2024</span>
+                        <span>4 comments</span>
+                        <span>Sub Category</span>
+                      </div>
+                      <div className="blogs__posts__content__link">
+                        <button>Read More</button>
+                        <span>
+                          <FiArrowUpRight size={20} />
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
               <div className="blogs__posts__pagination"></div>
             </div>
