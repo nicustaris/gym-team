@@ -183,9 +183,13 @@
 
             &__meta {
               margin-top: 1rem;
-              color: $silver;
-              font-size: 0.9rem;
+              color: $semi_dark;
+              font-size: 0.8rem;
               // font-weight: 600;
+
+              span {
+                margin-right: 0.5rem;
+              }
             }
           }
         }
