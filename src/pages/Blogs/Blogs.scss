@@ -52,12 +52,17 @@
       padding: 1rem;
       gap: 4rem;
 
-      h1 {
-        // color: $white;
-      }
+      // h1 {
+      //   // color: $white;
+      // }
 
       p {
-        // color: $silver;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       @include respond(md) {
@@ -231,6 +236,24 @@
                   color: $silver;
                 }
               }
+            }
+          }
+        }
+        .loading-spinner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          font-size: 1.5rem;
+          animation: spin 1s linear infinite;
+
+          /* Keyframes for spinning animation */
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
             }
           }
         }

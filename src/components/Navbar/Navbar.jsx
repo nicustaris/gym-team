@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-import { CiSearch } from "react-icons/ci";
-import { CiMail } from "react-icons/ci";
+// React icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
+import { CiUser } from "react-icons/ci";
+import { RiShoppingBasketLine } from "react-icons/ri";
 
 import "./Navbar.scss";
 
@@ -76,10 +77,13 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="navbar__icons__container">
-          <div className="search_icon">
-            <CiSearch size={21} />
+          <div className="navbar__icons__basket">
+            <div className="items__count">0</div>
+            <RiShoppingBasketLine size={21} />
           </div>
-          <CiMail size={21} />
+
+          <CiUser size={21} />
+
           {!isMenuOpen ? (
             <RxHamburgerMenu
               size={21}

@@ -1,5 +1,4 @@
-// MEDIA QUERY BREAKPOINTS
-
+// Media Query Breakpoints
 @mixin respond($breakpoint) {
   @if $breakpoint == sm {
     @media screen and (min-width: 576px) {
