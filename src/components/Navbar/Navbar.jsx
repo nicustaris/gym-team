@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import AuthModal from "../AuthModal/AuthModal";
+
 // React icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
@@ -11,7 +13,7 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [rotateClass, setRotateClass] = useState("");
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,8 +22,17 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-
     if (!isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen((prev) => !prev);
+
+    if (!isUserMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -82,7 +93,7 @@ const Navbar = () => {
             <RiShoppingBasketLine size={21} />
           </div>
 
-          <CiUser size={21} />
+          <CiUser onClick={toggleUserMenu} size={21} />
 
           {!isMenuOpen ? (
             <RxHamburgerMenu
@@ -134,6 +145,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
+        {isUserMenuOpen && <AuthModal />}
       </div>
     </div>
   );

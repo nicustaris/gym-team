@@ -1,0 +1,146 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.authmodal {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  &__blur {
+    flex: 1;
+  }
+
+  &__authentication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    background-color: #0f0f0f;
+
+    @include respond(sm) {
+      width: 65vw;
+    }
+    @include respond(md) {
+      width: 50vw;
+    }
+    @include respond(lg) {
+      width: 35vw;
+    }
+    @include respond(xl) {
+      width: 30vw;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 3.5rem;
+
+      p {
+        text-transform: uppercase;
+        font-family: $secondary_font;
+        font-size: 0.7rem;
+        color: $semi_dark;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .authmodal__authentication__switch {
+        display: flex;
+        width: 100%;
+
+        .authmodal__switch__btn {
+          background: inherit !important;
+          width: 100%;
+          border-bottom: 2px solid $semi_dark;
+          color: $silver;
+          padding: 1rem 2rem;
+          letter-spacing: 0.05rem;
+          font-size: 0.9rem;
+          transition: all 300ms ease-out;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .authmodal__switch__btn:hover {
+          border-bottom: 2px solid $silver !important;
+        }
+      }
+
+      .authmodal__authentication__form {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 2rem;
+        color: $silver;
+
+        .authmodal__input__wrapper {
+          position: relative;
+          width: 100%;
+          margin-top: 1.5rem;
+
+          .authmodal__authentication__form__label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 300ms ease;
+          }
+
+          .authmodal__authentication__form__input {
+            border: none;
+            outline: none;
+            margin-top: 1rem;
+            background: inherit;
+            color: $silver;
+            width: 100%;
+            border-bottom: 1px solid $semi_dark;
+            padding: 0.5rem 0rem 1rem;
+          }
+
+          .authmodal__authentication__form__input:focus
+            + .authmodal__authentication__form__label,
+          .filled {
+            top: 0.5rem;
+            font-size: 0.75rem;
+            color: $semi_dark;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: $silver !important;
+          }
+        }
+        &__submit {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-top: 2rem;
+
+          .authmodal__authentication__button {
+            background-color: inherit;
+            svg {
+              color: $silver;
+              :hover {
+                color: $lime;
+                transition: all 200ms ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
