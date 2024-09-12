@@ -145,7 +145,12 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        {isUserMenuOpen && <AuthModal />}
+        {isUserMenuOpen && (
+          <AuthModal
+            isUserMenuOpen={isUserMenuOpen}
+            setIsUserMenuOpen={setIsUserMenuOpen}
+          />
+        )}
       </div>
     </div>
   );
