@@ -9,10 +9,9 @@ import { MdClose } from "react-icons/md";
 
 const AuthModal = ({ isUserMenuOpen, setIsUserMenuOpen }) => {
   const [authMode, setAuthMode] = useState("signIn");
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="authmodal">
+    <div className={`authmodal ${isUserMenuOpen ? "active" : ""}`}>
       <div className="authmodal__blur"></div>
       <div className="authmodal__authentication">
         <div className="authmodal__authentication__close">

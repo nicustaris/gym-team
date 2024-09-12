@@ -9,9 +9,18 @@
   top: 0;
   left: 0;
   z-index: 9999;
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: opacity 5.5s ease, transform 5.5s ease; // Shortened for testing
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   &__blur {
     flex: 1;
+    background: rgba(0, 0, 0, 0.6);
   }
 
   &__authentication {
