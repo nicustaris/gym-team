@@ -1,15 +1,39 @@
 import React, { useState } from "react";
 
+import { supabase } from "../../utils/supabase.js";
+
 // React icons
-import { FaPlay } from "react-icons/fa";
+import {
+  FaPlay,
+  FaGoogle,
+  FaFacebook,
+  FaGithub,
+  FaTwitter,
+} from "react-icons/fa";
 
 const SignIn = React.memo(() => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  console.log("LOGIN");
+  const handleOAuthSignIn = async (provider) => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider,
+    });
+
+    if (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <form className="authmodal__authentication__form">
+      <div className="authmodal__authentication__social">
+        <FaGoogle size={21} onClick={() => handleOAuthSignIn("google")} />
+        <FaFacebook size={21} onClick={() => handleOAuthSignIn("facebook")} />
+        <FaGithub size={21} onClick={() => handleOAuthSignIn("github")} />
+        <FaTwitter size={21} onClick={() => handleOAuthSignIn("twitter")} />
+      </div>
       <div className="authmodal__input__wrapper">
         <input
           onChange={(e) => setEmail(e.target.value)}

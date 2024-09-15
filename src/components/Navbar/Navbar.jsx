@@ -32,11 +32,11 @@ const Navbar = () => {
   const toggleUserMenu = () => {
     setIsUserMenuOpen((prev) => !prev);
 
-    if (!isUserMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    // if (!isUserMenuOpen) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "";
+    // }
   };
 
   const handleScroll = () => {

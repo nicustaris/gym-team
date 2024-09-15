@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./AuthModal.scss";
 import SignIn from "./SignIn";
@@ -9,9 +9,20 @@ import { MdClose } from "react-icons/md";
 
 const AuthModal = ({ isUserMenuOpen, setIsUserMenuOpen }) => {
   const [authMode, setAuthMode] = useState("signIn");
+  const [delayedActive, setDelayedActive] = useState(false);
+
+  useEffect(() => {
+    if (isUserMenuOpen) {
+      setTimeout(() => {
+        setDelayedActive(true);
+      }, 100);
+    } else {
+      setDelayedActive(false);
+    }
+  }, [isUserMenuOpen]);
 
   return (
-    <div className={`authmodal ${isUserMenuOpen ? "active" : ""}`}>
+    <div className={`authmodal ${delayedActive ? "delayed-active" : ""}`}>
       <div className="authmodal__blur"></div>
       <div className="authmodal__authentication">
         <div className="authmodal__authentication__close">

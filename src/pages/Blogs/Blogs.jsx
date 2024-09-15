@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { supabase } from "../../supabaseClient";
+import { supabase } from "../../utils/supabase.js";
 
 import "./Blogs.scss";
 import Navbar from "../../components/Navbar/Navbar";

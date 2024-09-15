@@ -10,12 +10,12 @@
   left: 0;
   z-index: 9999;
   opacity: 0;
-  transform: translateY(-200px);
-  transition: opacity 5.5s ease, transform 5.5s ease; // Shortened for testing
+  visibility: hidden;
+  transition: all 0.3s ease;
 
-  &.active {
+  &.delayed-active {
+    visibility: visible;
     opacity: 1;
-    transform: translateY(0);
   }
 
   &__blur {
@@ -161,6 +161,19 @@
                 transition: all 200ms ease;
               }
             }
+          }
+        }
+      }
+      .authmodal__authentication__social {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
+        svg {
+          color: $silver;
+
+          &:hover {
+            color: $semi_dark;
           }
         }
       }
