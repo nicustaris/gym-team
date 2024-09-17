@@ -163,11 +163,19 @@
             }
           }
         }
+
+        &__error {
+          display: flex;
+          height: 2rem;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
       }
       .authmodal__authentication__social {
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        padding: 0.5rem;
 
         svg {
           color: $silver;

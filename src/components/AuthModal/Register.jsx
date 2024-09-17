@@ -21,8 +21,8 @@ const Register = () => {
       password,
       options: {
         data: {
-          first_name: "Nicolae",
-          last_name: "Staris",
+          first_name: firstName,
+          last_name: lastName,
         },
       },
     });
@@ -33,12 +33,13 @@ const Register = () => {
       return;
     }
 
-    console.log(data);
+    setSuccess("User registered successfully");
   };
 
   return (
     <form onSubmit={handleRegister} className="authmodal__authentication__form">
       {error && <p>{error}</p>}
+      {success && <p>{success}</p>}
       <div className="authmodal__input__wrapper">
         <input
           onChange={(e) => setFirstName(e.target.value)}

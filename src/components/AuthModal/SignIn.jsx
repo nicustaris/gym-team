@@ -11,29 +11,49 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-const SignIn = React.memo(() => {
+const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-  const handleOAuthSignIn = async (provider) => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider,
+  const handleEmailSignIn = async (event) => {
+    event.preventDefault();
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
     });
 
     if (error) {
       setError(error.message);
+    } else {
+      console.log("Sign-in successful");
     }
   };
 
+  // const handleOAuthSignIn = async (provider) => {
+  //   const { error } = await supabase.auth.signInWithOAuth({
+  //     provider,
+  //   });
+
+  //   if (error) {
+  //     setError(error.message);
+  //   }
+  // };
+
   return (
-    <form className="authmodal__authentication__form">
+    <form
+      onSubmit={handleEmailSignIn}
+      className="authmodal__authentication__form"
+    >
       <div className="authmodal__authentication__social">
         <FaGoogle size={21} onClick={() => handleOAuthSignIn("google")} />
         <FaFacebook size={21} onClick={() => handleOAuthSignIn("facebook")} />
         <FaGithub size={21} onClick={() => handleOAuthSignIn("github")} />
         <FaTwitter size={21} onClick={() => handleOAuthSignIn("twitter")} />
       </div>
+      {error && (
+        <p className="authmodal__authentication__form__error">{error}</p>
+      )}
       <div className="authmodal__input__wrapper">
         <input
           onChange={(e) => setEmail(e.target.value)}
@@ -71,6 +91,6 @@ const SignIn = React.memo(() => {
       </div>
     </form>
   );
-});
+};
 
 export default SignIn;
