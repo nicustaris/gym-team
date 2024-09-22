@@ -10,6 +10,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 import productImg from "./product.png";
 import "./Shop.scss";
+import { useSelector } from "react-redux";
 
 const Shop = () => {
   const [minPrice, setMinPrice] = useState(0);

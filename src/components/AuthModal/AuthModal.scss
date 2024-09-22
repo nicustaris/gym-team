@@ -187,4 +187,55 @@
       }
     }
   }
+
+  .authmodal__profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+
+    &__picture {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      img {
+        width: 7rem;
+        border-radius: 50%;
+        background-color: transparent;
+      }
+
+      &__add {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        button {
+          border-radius: 1rem;
+          font-family: $primary_font;
+          font-size: 0.8rem;
+          background-color: $dark;
+          color: $white;
+          padding: 0.7rem 1rem;
+          border: 1px solid $grey;
+        }
+
+        p {
+          font-size: 0.7rem;
+          color: $semi_dark;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .authmodal__profile__details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid $dark;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
 }

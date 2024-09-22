@@ -12,6 +12,7 @@ function App() {
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
       if (session?.user) {
         dispatch(setCurrentUser(session.user));
+        console.log(session.user);
       } else {
         dispatch(clearCurrentUser());
       }
